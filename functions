@@ -1,0 +1,57 @@
+'''''Autor: Guilherme Monteiro. 
+
+Para Utilizar a biblioteca de funções, siga o seguinte padrão:
+
+import funcoes   ***importe a biblioteca***
+
+L = [n1, n2, n3, ...ni]  ***deverá ser fornecida a lista no padrão ao lado, com o L maiúsculo.***
+
+funcoes.contar(L)   ***para utilizar uma função, insira o seguinte formato: biblioteca.função_desejada(L)
+
+'''
+
+def contar(L):
+    n = 0
+    for itens in L:
+        n += 1
+    print('O número de elementos é: ', n)
+    
+
+def somar(L):
+    soma = 0
+    for item in L:
+        soma += item
+    print('a soma dos elementos é: ', soma)
+
+def media(L):
+    n = 0
+    for itens in L:
+        n += 1
+    
+    soma = 0
+    for item in L:
+        soma += item
+
+    m = float(soma)/float(n)
+    print('A média é:', m)
+
+def dp(L):
+    n = 0
+    for itens in L:
+        n += 1
+    
+    soma = 0
+    for item in L:
+        soma += item
+
+    m = float(soma)/float(n)
+
+    valores = []
+    for itens in L:
+        if itens != valores:
+            valor = ((itens - m)**2)
+            valores.append(valor)
+    sum_xi = float(sum(valores))
+    dividir = sum_xi/n
+    s = dividir**(0.5)
+    print('o desvio padrão da média é: ',s)
