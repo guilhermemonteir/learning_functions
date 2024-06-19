@@ -1,57 +1,30 @@
-'''''Autor: Guilherme Monteiro. 
-
-Para Utilizar a biblioteca de funções, siga o seguinte padrão:
-
-import funcoes   ***importe a biblioteca***
-
-L = [n1, n2, n3, ...ni]  ***deverá ser fornecida a lista no padrão ao lado, com o L maiúsculo.***
-
-funcoes.contar(L)   ***para utilizar uma função, insira o seguinte formato: biblioteca.função_desejada(L)
-
-'''
-
 def contar(L):
     n = 0
     for itens in L:
-        n += 1
-    print('O número de elementos é: ', n)
+        n = n+1
+    return n
     
 
 def somar(L):
-    soma = 0
+    s = 0
     for item in L:
-        soma += item
-    print('a soma dos elementos é: ', soma)
+        s = s + item
+    return s
 
 def media(L):
-    n = 0
-    for itens in L:
-        n += 1
-    
-    soma = 0
-    for item in L:
-        soma += item
-
-    m = float(soma)/float(n)
-    print('A média é:', m)
+    n = contar(L)
+    s = somar(L)
+    m = s/n
+    return m
 
 def dp(L):
-    n = 0
-    for itens in L:
-        n += 1
+    n = contar(L)
+    m = media(L)
     
-    soma = 0
-    for item in L:
-        soma += item
-
-    m = float(soma)/float(n)
-
-    valores = []
-    for itens in L:
-        if itens != valores:
-            valor = ((itens - m)**2)
-            valores.append(valor)
-    sum_xi = float(sum(valores))
-    dividir = sum_xi/n
-    s = dividir**(0.5)
-    print('o desvio padrão da média é: ',s)
+    difm2 = 0
+    for xi in L:
+        ss=(xi-m)**2
+        difm2 = difm2 + ss
+        
+    sd = ((1/((n-1)))*difm2)**(1/2)
+    return sd
